@@ -30,6 +30,7 @@ gem 'haml'
 gem 'rspec'
 gem 'rspec-rails'
 gem 'dalli'
+gem 'foreman'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
