@@ -210,6 +210,13 @@ var ready = function(){
     GovSalaries.getMedianSalaryData();
   } else if ($("body.agency_median_salaries").length > 0) {
     GovSalaries.getAgencyMedianSalaryData();
+  } else if ($("body.top_ten").length > 0) {
+    $("a.top_ten_salary_bonus_toggle").click(function(e){
+      $("#top_ten_salaries").toggle();
+      $("#top_ten_bonuses").toggle();
+      $(".salary_bonus_toggle").toggleClass("active")
+      e.preventDefault();
+    });
   }
 };
 $(document).ready(ready);

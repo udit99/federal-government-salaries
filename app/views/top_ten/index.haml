@@ -1,32 +1,39 @@
+%ul.nav.nav-tabs
+  %li.salary_bonus_toggle.active
+    %a.top_ten_salary_bonus_toggle{href: ""} Top 10 Salaries
+  %li.salary_bonus_toggle
+    %a.top_ten_salary_bonus_toggle{href: ""} Top 10 Bonuses
 .container
-  %h3
-    Top Ten Salaries
-  %table.table
-    %tr
-      %th
-        Name
-      %th
-        Title
-      %th
-        Agency
-      %th
-        State/Country
-      %th
-        Base Salary
-    = render partial: '/top_ten/top_ten_salaries', collection: @top_ten_salaries
+  #top_ten_salaries
+    %h3
+      Top Ten Salaries
+    %table.table
+      %tr
+        %th
+          Name
+        %th
+          Title
+        %th
+          Agency
+        %th
+          State/Country
+        %th
+          Base Salary
+      = render partial: '/top_ten/top_ten_salaries', collection: @top_ten_salaries
 
-  %h3
-    Top Ten Bonuses
-  %table.table
-    %tr
-      %th
-        Name
-      %th
-        Title
-      %th
-        Agency
-      %th
-        State/Country
-      %th
-        Award Bonus
-    = render partial: '/top_ten/top_ten_bonuses', collection: @top_ten_bonuses
+  #top_ten_bonuses{style: 'display: none'}
+    %h3
+      Top Ten Bonuses
+    %table.table
+      %tr
+        %th
+          Name
+        %th
+          Title
+        %th
+          Agency
+        %th
+          State/Country
+        %th
+          Award Bonus
+      = render partial: '/top_ten/top_ten_bonuses', collection: @top_ten_bonuses
