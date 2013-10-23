@@ -1,0 +1,2 @@
+To load data from the salaries CSV:
+LOAD DATA INFILE '/Users/A631083/Downloads/salaries2.csv' INTO TABLE salaries FIELDS TERMINATED BY ',' (name,agency,division,job_title,state_or_country,county,station,plan_grade,base_salary,award_bonus,serialid) SET id = NULL;

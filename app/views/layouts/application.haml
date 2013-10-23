@@ -1,0 +1,29 @@
+%html
+  %head
+    %title Salaries
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = stylesheet_link_tag    "http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = javascript_include_tag "http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"
+    = csrf_meta_tags
+  %body{class: controller.controller_name}
+    %a{href: "https://github.com/udit99/federal-government-salaries"}
+      %img{alt: "Fork me on GitHub", src: "https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png", style: "position: absolute; top: 0; right: 0; border: 0;z-index: 1000000"}/
+    %nav.navbar.navbar-default{role: "navigation"}
+      .navbar-header
+        %button.navbar-toggle{"data-target" => ".navbar-ex1-collapse", "data-toggle" => "collapse", type: "button"}
+        %a.navbar-brand{href: root_path} US Federal Employee Salaries (2012)
+      .collapse.navbar-collapse.navbar-ex1-collapse
+        %ul.nav.navbar-nav
+          %li{class: active_class(:home)}
+            = link_to "All Salaries",root_path
+          %li{class: active_class(:median_salaries)}
+            = link_to "Median Salaries by Job Title",median_salaries_path
+          %li{class: active_class(:agency_median_salaries)}
+            = link_to "Median Salaries by Agency",agency_median_salaries_path
+          %li{class: active_class(:top_ten)}
+            = link_to "Top 10",top_ten_index_path
+    = yield
+    .container
+      #credits
+        = link_to '@udit','http://twitter.com/udit', {target: '_blank'}

@@ -1,0 +1,32 @@
+.container
+  %h3
+    Top Ten Salaries
+  %table.table
+    %tr
+      %th
+        Name
+      %th
+        Title
+      %th
+        Agency
+      %th
+        State/Country
+      %th
+        Base Salary
+    = render partial: '/top_ten/top_ten_salaries', collection: @top_ten_salaries
+
+  %h3
+    Top Ten Bonuses
+  %table.table
+    %tr
+      %th
+        Name
+      %th
+        Title
+      %th
+        Agency
+      %th
+        State/Country
+      %th
+        Award Bonus
+    = render partial: '/top_ten/top_ten_bonuses', collection: @top_ten_bonuses

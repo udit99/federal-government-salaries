@@ -1,0 +1,18 @@
+.container
+= form_tag('/salaries', method: :get, class: 'form-horizontal search-form') do
+  .form-group
+    = label_tag  :job_title
+    = select_tag :job_title, options_for_select(@job_title, {include_blank: true})
+    = label_tag  :agency
+    = select_tag :agency, options_for_select(@agency, {include_blank: true})
+    = label_tag  :division
+    = select_tag :division, options_for_select(@division, {include_blank: true})
+  .form-group
+    = label_tag  :state_or_country
+    = select_tag :state_or_country, options_for_select(@state_or_country, {include_blank: true})
+    = label_tag  :county
+    = select_tag :county, options_for_select(@county, {include_blank: true})
+  .form-group
+    %button{type:"button", class:"btn btn-success submit"}
+      Submit
+#all-salaries-container
