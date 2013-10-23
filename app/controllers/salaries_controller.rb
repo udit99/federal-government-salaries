@@ -2,8 +2,10 @@ class SalariesController < ApplicationController
   VALID_PARAMS = [:division, :state_or_country, :county, :agency, :job_title]
 
   def index
-    grouped = Salary.where(conditions_hash).group_by_segment
-    render json: grouped.to_json
+    grouped_salary_counts = Rails.cache.fetch(conditions_hash.sort.to_s, :expires_in => 96.hours) do
+      Salary.where(conditions_hash).group_by_segment
+    end
+    render json: grouped_salary_counts.to_json
   end
 
 

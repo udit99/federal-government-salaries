@@ -1,9 +1,9 @@
 class AgencyMedianSalariesController < ApplicationController
 
   def index
-    median_salaries = Rails.cache.fetch('median_salaries_by_agency', :expires_in => 96.hours){
+    median_salaries = Rails.cache.fetch('median_salaries_by_agency', :expires_in => 96.hours) do
       AgencyMedianSalary.all.order(:median_salary)
-    }
+    end
     respond_to do |format|
       format.html
       format.json{
