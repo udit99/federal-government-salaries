@@ -174,7 +174,9 @@ GovSalaries.getSalaryData = function(data){
   var path = '/salaries'
   var url = data ? (path + "?" + data) : path
 
+  GovSalaries.showThrobber();
   $.get(url, function(data){
+    GovSalaries.hideThrobber();
     GovSalaries.showSalaryHighCharts(data);
   })
 };
@@ -197,7 +199,7 @@ GovSalaries.getAgencyMedianSalaryData = function(data){
   })
 };
 GovSalaries.submitSalaryDataForm = function(){
-  $(".search-form .submit").click(function(){
+  $(".search-form select").change(function(){
     var data = $(".search-form").serialize();
     GovSalaries.getSalaryData(data);
   })
@@ -210,6 +212,12 @@ GovSalaries.toggleTopTenSalariesAndBonii = function(){
     $(".salary_bonus_toggle").toggleClass("active")
     e.preventDefault();
   });
+}
+GovSalaries.showThrobber = function(){
+  $("#throbber").removeClass("transparent");
+}
+GovSalaries.hideThrobber = function(){
+  $("#throbber").addClass("transparent");
 }
 var ready = function(){
   if($("body.home").length > 0){

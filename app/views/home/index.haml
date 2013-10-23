@@ -13,6 +13,6 @@
     = label_tag  :county
     = select_tag :county, options_for_select(@county),{prompt: "All"}
   .form-group
-    %button{type:"button", class:"btn btn-success submit"}
-      Submit
+    #throbber.transparent
+      = image_tag('ajax-loader.gif')
 #all-salaries-container
