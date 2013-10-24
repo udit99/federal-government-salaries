@@ -1,10 +1,10 @@
 Source code for http://www.thegovernmentpaycheck.com/
 ### Local Environment setup
-  #### Prereqs
+#### Prereqs
      * MySQL
      * Memcached (It'll still work without Memcached but bug you with
        timeouts)
-  #### Setup Steps
+#### Setup Steps
     * git clone git@github.com:udit99/federal-government-salaries.git
     * cd federal-government-salaries
     * bundle
