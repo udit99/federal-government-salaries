@@ -229,6 +229,9 @@ var ready = function(){
     GovSalaries.getAgencyMedianSalaryData();
   } else if ($("body.top_ten").length > 0) {
     GovSalaries.toggleTopTenSalariesAndBonii();
+  } else if ($("body.salary_charts").length > 0) {
+    var data = document.URL.split('?')[1];
+    data ? GovSalaries.getSalaryData(data) : GovSalaries.getSalaryData();
   }
 };
 $(document).ready(ready);

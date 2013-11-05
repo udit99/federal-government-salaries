@@ -54,5 +54,5 @@ Salaries::Application.routes.draw do
   #     resources :products
   #   end
   #
-  resources :salaries, :median_salaries, :agency_median_salaries, :top_ten
+  resources :salaries, :median_salaries, :agency_median_salaries, :top_ten, :salary_charts
 end
