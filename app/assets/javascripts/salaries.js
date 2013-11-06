@@ -230,11 +230,8 @@ var ready = function(){
   } else if ($("body.top_ten").length > 0) {
     GovSalaries.toggleTopTenSalariesAndBonii();
   } else if ($("body.salary_charts").length > 0) {
-    console.log("got in body salary charts");
     var data = document.URL.split('?')[1];
-    console.log("split data", data);
     data ? GovSalaries.getSalaryData(data) : GovSalaries.getSalaryData();
-    console.log("post");
   }
 };
 $(document).ready(ready);
