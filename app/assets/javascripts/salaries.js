@@ -220,6 +220,7 @@ GovSalaries.hideThrobber = function(){
   $("#throbber").addClass("transparent");
 }
 var ready = function(){
+  debugger;
   if($("body.home").length > 0){
     GovSalaries.getSalaryData();
     GovSalaries.submitSalaryDataForm();
