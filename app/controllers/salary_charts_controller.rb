@@ -6,7 +6,7 @@ class SalaryChartsController < ApplicationController
     @grouped_salary_counts = Rails.cache.fetch(conditions_hash.sort.to_s, :expires_in => 96.hours) do
       Salary.where(conditions_hash).group_by_segment
     end
-    render 'index'
+    render 'index', layout: false
   end
 
 

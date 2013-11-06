@@ -1,1 +1,6 @@
-#all-salaries-container
+%html
+  %head
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = javascript_include_tag "http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"
+  %body{class: controller.controller_name}
+    #all-salaries-container
