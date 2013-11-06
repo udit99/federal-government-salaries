@@ -1,5 +1,5 @@
-var GovSalaries = GovSalaries || {}
-GovSalaries.utilities = GovSalaries.utilities || {}
+var GovSalaries = GovSalaries || {};
+GovSalaries.utilities = GovSalaries.utilities || {};
 GovSalaries.utilities.parseQueryParams = function(){
   var vars = [], hash;
   var q = document.URL.split('?')[1];
@@ -10,6 +10,6 @@ GovSalaries.utilities.parseQueryParams = function(){
       vars.push(hash[1]);
       vars[hash[0]] = hash[1];
     }
+  }
   return vars;
-}
-
+};
